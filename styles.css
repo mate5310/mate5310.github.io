@@ -5,54 +5,62 @@ body {
     text-align: center;
     padding: 20px;
     margin: 0;
-    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 .container {
     padding: 20px;
     position: relative;
     z-index: 2;
+    max-width: 90%;
+    margin: auto;
+    flex: 1;
 }
 h1 {
-    font-size: 3em;
-    margin-top: 30px;
+    font-size: 2.5em;
+    margin-top: 20px;
     animation: fadeIn 2s ease-in-out;
 }
 .card {
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    max-width: 600px;
+    max-width: 100%;
     margin: 20px auto;
     animation: slideIn 2s ease-in-out;
 }
 p {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.6;
+    margin: 10px 0;
 }
 .heart {
     color: red;
-    font-size: 2em;
+    font-size: 1.8em;
     animation: beat 1s infinite alternate;
 }
 .forgive-btn {
     background-color: #ff6b6b;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border-radius: 30px;
-    font-size: 1.2em;
+    font-size: 1em;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 15px;
 }
 .forgive-btn:hover {
     transform: scale(1.1);
     background-color: #ff8787;
 }
 .footer {
-    margin-top: 50px;
-    font-size: 0.9em;
+    margin-top: 30px;
+    font-size: 0.8em;
     color: #555;
 }
 
@@ -61,7 +69,7 @@ p {
     content: "❤️";
     position: absolute;
     top: 100%;
-    font-size: 2em;
+    font-size: 1.5em;
     animation: floatUp 5s infinite ease-in-out;
     opacity: 0.6;
 }
@@ -89,4 +97,17 @@ p {
 @keyframes floatUp {
     from { top: 100%; opacity: 0.6; }
     to { top: -10%; opacity: 0; }
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+    .forgive-btn {
+        font-size: 1.2em;
+    }
 }
